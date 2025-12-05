@@ -1,0 +1,114 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .font-gaming {
+            font-family: 'Rajdhani', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e293b' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(148, 163, 184, 0.08);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.85);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-4px) scale(1.005);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        }
+        .minecraft-btn {
+            box-shadow: 0 4px 0 #047857;
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .minecraft-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #047857;
+        }
+        .minecraft-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 0 0 #047857;
+        }
+
+        /* --- Animations --- */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite; 
+        }
+        .pause-on-hover:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        /* Masking untuk efek blur di pinggir testimoni */
+        .marquee-mask {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(4px);
+            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                        transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        filter 1s ease;
+            will-change: opacity, transform, filter;
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Custom Inputs */
+        select option {
+            background-color: #1e293b;
+            color: white;
+            padding: 10px;
+        }
+        
+        input[type=range] {
+            -webkit-appearance: none; 
+            background: transparent; 
+            touch-action: none; 
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            margin-top: -10px; 
+            opacity: 0; 
+        }
+        input[type=range]::-moz-range-thumb {
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            opacity: 0;
+        }
+        input[type=range]:focus {
+            outline: none; 
+        }
