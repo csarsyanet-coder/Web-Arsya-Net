@@ -1,6 +1,6 @@
 (async function(){
-  const LICENSE_API_URL = 'https://YOUR-WORKER-URL/verify'; 
-  const HEARTBEAT_URL = 'https://YOUR-WORKER-URL/heartbeat';
+  const LICENSE_API_URL = 'https://yellow-salad-3254.aridirahmadani45.workers.dev/verify'; 
+  const HEARTBEAT_URL = 'https://yellow-salad-3254.aridirahmadani45.workers.dev/heartbeat';
   const PRODUCT_ID = 'arsya-web-v1';
 
   async function checkLicense() {
@@ -33,3 +33,4 @@
 
   checkLicense();
 })();
+
